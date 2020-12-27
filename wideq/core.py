@@ -484,8 +484,10 @@ class Session(object):
             RequestMethod.POST,
             url,
             data,
-            self.auth.access_token,
+            access_token=self.auth.access_token,
             user_number=self.auth.user_number,
+            country=self.auth.gateway.country,
+            language=self.auth.gateway.language,
         )
 
     def get(self, path):
